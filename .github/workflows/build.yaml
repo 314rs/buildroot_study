@@ -2,6 +2,8 @@ name: build
 
 on: 
   workflow_dispatch:
+  push: 
+    branches: main
 
 jobs:
   build:
@@ -17,6 +19,7 @@ jobs:
         #       ~
         #     key: cache
         - run: sudo apt install sed make binutils build-essential diffutils gcc g++ bash patch gzip bzip2 perl tar cpio unzip rsync file bc findutils wget libncurses5-dev
+        - run: cd buildroot && ln -s ../.config
         - run: make
         - uses: actions/upload-artifact@v4
           with:
