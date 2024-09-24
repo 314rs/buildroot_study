@@ -12,15 +12,17 @@ jobs:
         - uses: actions/checkout@v4
           with:
             submodules: 'true'
-        # - uses: actions/cache@v4
-        #   id: cache
-        #   with:
-        #     path: | 
-        #       ~
-        #     key: cache
+        - uses: actions/cache@v4
+          id: cache
+          with:
+            path: | 
+              ~/.buildroot-ccache
+              buidlroot/dl
+            key: buildroot-cache
         - run: sudo apt install sed make binutils build-essential diffutils gcc g++ bash patch gzip bzip2 perl tar cpio unzip rsync file bc findutils wget libncurses5-dev
         - run: cd buildroot && ln -s ../.config
         - run: cd buildroot && make
+        - run: ls -alF && cd buildroot && ls -alF
         - uses: actions/upload-artifact@v4
           with:
             name: image-files
