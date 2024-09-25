@@ -26,4 +26,4 @@ jobs:
         - uses: actions/upload-artifact@v4
           with:
             name: image-files
-            path: buildroot/output/*
+            path: buildroot/output/images/sdcard.img
