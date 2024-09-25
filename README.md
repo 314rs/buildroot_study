@@ -1,11 +1,12 @@
 # Buildroot study
 
-Buildroot is a simple, efficient and easy-to-use tool to generate embedded
-Linux systems through cross-compilation.
+[![build](https://github.com/314rs/buildroot_study/actions/workflows/build.yaml/badge.svg)](https://github.com/314rs/buildroot_study/actions/workflows/build.yaml)
+
+Build an embedded linux image using buildroot
 
 ## Download
 
-Download the program for your platform from the latest [build action](link).
+Download the program for your platform from the latest [build action](https://github.com/314rs/buildroot_study/actions/workflows/build.yaml).
 
 ## Build & usefull commands
 
@@ -19,11 +20,12 @@ make menuconfig # if you want to configure stuff
 make
 cat output/build/build-time.log # to check the build time
 ```
+the image then is at `buildroot/output/images/sdcard.img`.
 
 ### Dependencies
 
 - [buildroot](https://buildroot.org)
-- LVGL
+- [LVGL](https://lvgl.io/)
 
 ## Links
 
